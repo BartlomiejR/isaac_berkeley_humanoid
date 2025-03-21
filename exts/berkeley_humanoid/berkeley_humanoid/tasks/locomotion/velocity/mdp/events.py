@@ -8,12 +8,12 @@ from __future__ import annotations
 import torch
 from typing import TYPE_CHECKING, Literal
 
-from omni.isaac.lab.assets import Articulation
-from omni.isaac.lab.managers import SceneEntityCfg
-from omni.isaac.lab.envs.mdp.events import _randomize_prop_by_op
+from isaaclab.assets import Articulation
+from isaaclab.managers import SceneEntityCfg
+from isaaclab.envs.mdp.events import _randomize_prop_by_op
 
 if TYPE_CHECKING:
-    from omni.isaac.lab.envs import ManagerBasedEnv
+    from isaaclab.envs import ManagerBasedEnv
 
 
 def randomize_joint_default_pos(
@@ -61,7 +61,7 @@ def randomize_joint_friction_model(
     distribution: Literal["uniform", "log_uniform", "gaussian"] = "uniform",
 ):
     """
-    Randomize the friction parameters used in joint friction model. 
+    Randomize the friction parameters used in joint friction model.
     """
     # extract the used quantities (to enable type-hinting)
     asset: Articulation = env.scene[asset_cfg.name]
